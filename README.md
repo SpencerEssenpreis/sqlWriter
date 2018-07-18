@@ -1,4 +1,4 @@
-# sqlWriter
+# sqlWriteR
 R package for writing SQL Queries to pass into functions as a single character string
 
 This is a basic package for use in writing SQL Queries into character strings for use in R functions, such as those in the RODBC package.
