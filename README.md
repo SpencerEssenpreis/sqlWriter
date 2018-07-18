@@ -5,4 +5,4 @@ This is a basic package for use in writing SQL Queries into character strings fo
 
 Currently this package is in an early state and is intended primarily for use within the context of my workplace, but it available here for all to use.
 
-Any and all feedback is welcome!
+I'm relatively new to R, so I'm sure there are plenty of ways I can improve this package.  Any and all feedback is welcome!
