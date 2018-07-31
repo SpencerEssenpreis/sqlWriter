@@ -11,6 +11,6 @@
 
 
 sqlIn <- function(vect, type="char") {
-  if (type=="char") {paste(" ('", paste(unique(vect), collapse="','"), "') ", sep="") } else
-    if (type=="num") {paste(" (", paste(unique(vect), collapse=","), ") ", sep="")}
+  if (type=="char") {paste(" ('", paste(unique(vect[!is.na(vect)]), collapse="','"), "') ", sep="") } else
+    if (type=="num") {paste(" (", paste(unique(vect[!is.na(vect)]), collapse=","), ") ", sep="")}
 }
