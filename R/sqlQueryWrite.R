@@ -12,7 +12,7 @@ sqlQueryWrite <- function(...) {
   query <- paste(..., sep=" ")
 
   #replace any -- comments with /* */
-  query <- strsplit(query, split = "\\\n")
+  query <- sapply(query, function(x) strsplit(x, "\\\n")[[1]], USE.NAMES=FALSE)
   query <- sapply(query, function(x){if(length(grep("--", x) > 0)) {x <- paste(x,"*/", sep = "")} else{x}}, USE.NAMES = FALSE)
   query <- sapply(query, sub, pattern = "--", replacement = "/\\*")
   query <- paste(query, collapse = " ")
