@@ -10,15 +10,15 @@
 
 sqlInsert <- function(sourceframe, table)
 {
-  sourceframe %>% mutate_if(is.factor, as.character) -> sourceframe
+  sourceframe %>% dplyr::mutate_if(is.factor, as.character) -> sourceframe
   for (i in 1: ncol(sourceframe))
   {
     coln <- colnames(sourceframe)[i]
     colnames(sourceframe)[i] <- "tempname"
     if (is.character(sourceframe$tempname))
     {
-      sourceframe %>% filter(!is.na(tempname)) %>% mutate(tempname = paste("'", tempname, "'", sep="")) -> sourceframea
-      sourceframe %>% filter(is.na(tempname)) -> sourceframeb
+      sourceframe %>% dplyr::filter(!is.na(tempname)) %>% dplyr::mutate(tempname = paste("'", tempname, "'", sep="")) -> sourceframea
+      sourceframe %>% dplyr::filter(is.na(tempname)) -> sourceframeb
       sourceframe <- bind_rows (sourceframea, sourceframeb)
       rm(sourceframea,sourceframeb)
     }
@@ -29,6 +29,6 @@ sqlInsert <- function(sourceframe, table)
 
   sourceframe %>% mutate_all(as.character) -> sourceframe
   sourceframe[is.na(sourceframe)] <- "NULL"
-  sourceframe %>% unite(values, sep = ",") %>% mutate(values = paste("(", values, ")", sep=""))-> sourceframe
+  sourceframe %>% tidyr::unite(values, sep = ",") %>% dplyr::mutate(values = paste("(", values, ")", sep=""))-> sourceframe
   paste("INSERT INTO ", table, " VALUES ", paste(sourceframe$values, collapse=","), "; ", sep="")
 }
