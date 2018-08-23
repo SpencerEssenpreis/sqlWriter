@@ -1,10 +1,14 @@
 Package: sqlWriteR
-Title: What the Package Does (one line, title case)
+Title: R Package for Writing SQL Queries To Pass Into Functions
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Spencer", "Essenpreis", email = "spenceredwin@yahoo.com", role = c("aut", "cre"))
+Description: Simplifies writing SQL queries to pass to other functions in R.
 Depends: R (>= 3.5.1)
-License: What license is it under?
+Imports: 
+	tidyr,
+	dplyr,
+	devtools
+License: GNU General Public License v3.0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1.9000
