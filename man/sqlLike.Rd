@@ -11,7 +11,7 @@ sqlLike(vect, field, wildcard = "\%", loc = "end")
 
 \item{field}{The name of the field in your SQL database to use in your LIKE statements}
 
-\item{wildcard}{Which wildcard character you would like to use in your LIKE statements. Defaults to "%"}
+\item{wildcard}{Which wildcard character you would like to use in your LIKE statements. Defaults to the percent sign}
 
 \item{loc}{Where you would like to locate the wildcard character for each value.  Current options are "end" for the appending the wildcard to the end of the value, "lead" for appending the wildcard to the beginning of the value, and "both" for both.  Defaults to "end".}
 }

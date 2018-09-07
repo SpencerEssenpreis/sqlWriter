@@ -3,7 +3,7 @@
 #' This function allows you to take a vector and turn it into a character string containing a series of LIKE statements for use in an SQL query.
 #' @param vect A vector you want to use for creating your LIKE statements
 #' @param field The name of the field in your SQL database to use in your LIKE statements
-#' @param wildcard Which wildcard character you would like to use in your LIKE statements. Defaults to "%"
+#' @param wildcard Which wildcard character you would like to use in your LIKE statements. Defaults to the percent sign
 #' @param loc Where you would like to locate the wildcard character for each value.  Current options are "end" for the appending the wildcard to the end of the value, "lead" for appending the wildcard to the beginning of the value, and "both" for both.  Defaults to "end".
 #' @keywords sqlWriter
 #' @export
