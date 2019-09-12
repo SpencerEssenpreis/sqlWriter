@@ -18,6 +18,13 @@ sqlQueryWrite <- function(...) {
   query <- paste(query, collapse = " ")
 
   #remove any remaining \t and \n characters
-  query <- gsub("\t"," ", query)
-  gsub("\n"," ", query)
+  query <- gsub("\\t"," ", query)
+  query <- gsub("\\n"," ", query)
+  query <- gsub("\\r"," ", query)
 }
+
+query <- "SELECT * FROM
+--WHAT!
+table
+WHERE -- yeah
+red = blue"
